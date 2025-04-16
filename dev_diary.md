@@ -9,9 +9,20 @@
 - downloaded PyCharm Community Edition & started figuring my way around it
 - added a `models` package to hold shared models (CVEs returned from NVD, Actions parsed from GitHub Workflows)
   - used `dataclasses` so that I don't have to bother with `self.field = field` etc...
+  - 
 - created an `httpclients` module containing
   - a `BaseHttpClient` class to handle making `GET`/`POST`
-  - some basic logging to refactor later into structured logs
-  - some error handling around the `get` method
+    - some basic logging to refactor later into structured logs
+    - some error handling around the `get` method
+    - used `urlencode` to make keywords safe to add to query params
+  - a `NvdHttpClient` class to make calls to the NVD API
+  - a `responsemodels` folder to hold DTOs and handle parsing of the response
 
 ### Thoughts
+Started off getting things written, immediately hated not having type hints. Went back and added them all,
+so I can hover methods & see what I get back from them. 
+
+Happy enough with the progress for a first stab at the NVD API able to make a call using the `keywordSearch` param- would like to some structured logging, and the ability 
+to set log levels. 
+
+

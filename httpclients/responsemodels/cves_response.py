@@ -3,6 +3,9 @@ from typing import List, Dict, Any
 
 from models.cve import Cve
 from models.cvss import Cvss
+from utils.logging import setup_logger
+
+logger = setup_logger(__name__)
 
 @dataclass
 class CvesResponse:
@@ -18,7 +21,7 @@ class CvesResponse:
     @staticmethod
     def parse_json(data: Dict[str, Any]) -> "CvesResponse":
         """Helper method to parse CVE from raw JSON into CvesResponse"""
-        print("DEBUG: parsing CVE response")
+        logger.debug("DEBUG: parsing CVE response")
         cves = []
 
         for item in data.get("vulnerabilities", []):
