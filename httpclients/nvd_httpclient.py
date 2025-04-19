@@ -1,13 +1,13 @@
-from urllib.parse import quote_plus
-
 from httpclients.base_httpclient import BaseHttpClient
 from httpclients.responsemodels.cves_response import CvesResponse
 from utils.logging import setup_logger
 
 logger = setup_logger(__name__)
 
+
 class NvdHttpClient(BaseHttpClient):
     """Derived HttpClient to handle interacting with NIST NVD (National Vulnerability Database)"""
+
     def __init__(self, base_url: str):
         logger.debug("initialising NvdHttpClient")
         super().__init__(base_url)

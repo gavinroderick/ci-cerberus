@@ -3,6 +3,7 @@ from typing import List
 
 from models.cvss import Cvss
 
+
 @dataclass
 class Cve:
     cve_id: str

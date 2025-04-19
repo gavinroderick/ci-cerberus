@@ -1,5 +1,5 @@
 import os.path
-from typing import Optional, Iterator, List
+from typing import Iterator, List, Optional
 
 import yaml
 
@@ -52,7 +52,7 @@ class WorkflowParser:
             return None
 
     def _parse_yaml(self, file_path: str) -> Workflow:
-        with open(file_path, 'r') as file:
+        with open(file_path, "r") as file:
             logger.info(f"parsing workflow file {file.name}")
             workflow_yaml = yaml.load(file.read(), Loader=yaml.SafeLoader)
             return self._parse_workflow(workflow_yaml)
@@ -65,7 +65,7 @@ class WorkflowParser:
         return Workflow(
             id=workflow_yaml.get("id"),
             name=workflow_yaml.get("name"),
-            jobs=jobs
+            jobs=jobs,
         )
 
     def _parse_jobs(self, jobs_yaml) -> Iterator[Job]:
@@ -79,7 +79,7 @@ class WorkflowParser:
                 key=key,
                 name=job.get("name"),
                 runs_on=job.get("runs-on"),
-                steps=steps
+                steps=steps,
             )
 
     @staticmethod
@@ -92,5 +92,5 @@ class WorkflowParser:
                 id=step.get("id"),
                 name=step.get("name"),
                 uses=uses,
-                with_arguments=step.get("with")
+                with_arguments=step.get("with"),
             )
