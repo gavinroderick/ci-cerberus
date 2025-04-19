@@ -1,0 +1,14 @@
+# pyproject.toml
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_third_party = ["requests", "flask"]  # Optional: Add known third-party modules
+known_first_party = ["githubparsers", "httpclients"]  # Optional: Add first-party modules
+
+[tool.flake8]
+max-line-length = 100
