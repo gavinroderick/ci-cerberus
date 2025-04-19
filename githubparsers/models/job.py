@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from actionsparser.models.step import Step
+from githubparsers.models.step import Step
 
 
 @dataclass

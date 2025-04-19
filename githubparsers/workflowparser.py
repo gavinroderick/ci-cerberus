@@ -3,15 +3,15 @@ from typing import Optional, Iterator, List
 
 import yaml
 
-from actionsparser.models.job import Job
-from actionsparser.models.step import Step
-from actionsparser.models.workflow import Workflow
+from githubparsers.models.job import Job
+from githubparsers.models.step import Step
+from githubparsers.models.workflow import Workflow
 from utils import logging
 
 logger = logging.setup_logger(__name__)
 
 
-class ActionsParser:
+class WorkflowParser:
     def __init__(self, github_directory: str = ".github/workflows"):
         self.github_directory = os.path.normpath(github_directory)
 

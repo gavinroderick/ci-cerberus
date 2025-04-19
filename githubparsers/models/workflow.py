@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from actionsparser.models.job import Job
-from actionsparser.models.step import Step
+from githubparsers.models.job import Job
+from githubparsers.models.step import Step
 
 
 @dataclass
