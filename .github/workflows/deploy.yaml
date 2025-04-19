@@ -2,9 +2,9 @@ name: test deploy action
 on:
   - push
 jobs:
-  changed_files:
+  deploy:
       runs-on: ubuntu-latest
-      name: Test changed-files
+      name: Deploy
       steps:
         - uses: actions/checkout@v4
 

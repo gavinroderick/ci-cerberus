@@ -1,10 +1,9 @@
-name: test deploy action
-on:
-  - push
+name: test build action
+on: push
 jobs:
-  changed_files:
+  build_test:
       runs-on: ubuntu-latest
-      name: Test changed-files
+      name: Build & Test
       steps:
         - uses: actions/checkout@v4
 
