@@ -1,11 +1,10 @@
+import logging
 from typing import Any, Dict, Optional
 from urllib.parse import urlencode
 
 import requests
 
-from utils.logging import setup_logger
-
-logger = setup_logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class BaseHttpClient:

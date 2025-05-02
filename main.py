@@ -1,14 +1,19 @@
-from githubparsers import workflowparser
-from utils.logging import setup_logger
+import argparse
+import logging
 
-logger = setup_logger(__name__)
+from utils import log_utils
 
 if __name__ == "__main__":
 
     # Find out how much the user wants to know
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--verbosity", "-v", default="INFO", choices=["DEBUG", "INFO"], help="Set output verbosity")
+        "--verbosity",
+        "-v",
+        default="INFO",
+        choices=["DEBUG", "INFO"],
+        help="Set output verbosity",
+    )
     args = parser.parse_args()
 
     # Setup logging globally

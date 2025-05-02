@@ -1,8 +1,9 @@
+import logging
+
 from httpclients.base_httpclient import BaseHttpClient
 from httpclients.responsemodels.cves_response import CvesResponse
-from utils.logging import setup_logger
 
-logger = setup_logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class NvdHttpClient(BaseHttpClient):

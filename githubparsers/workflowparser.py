@@ -1,3 +1,4 @@
+import logging
 import os.path
 from typing import Iterator, List, Optional
 
@@ -6,9 +7,8 @@ import yaml
 from githubparsers.models.job import Job
 from githubparsers.models.step import Step
 from githubparsers.models.workflow import Workflow
-from utils import logging
 
-logger = logging.setup_logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class WorkflowParser:

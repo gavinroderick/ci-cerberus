@@ -1,11 +1,11 @@
+import logging
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
 
 from models.cve import Cve
 from models.cvss import Cvss
-from utils.logging import setup_logger
 
-logger = setup_logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 @dataclass
