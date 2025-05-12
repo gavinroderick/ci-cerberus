@@ -2,8 +2,11 @@ import logging
 import sys
 
 
-def setup_logger(verbosity: str = "INFO") -> None:
-    level = logging.getLevelName(verbosity.upper())
+def setup_logger(verbose: bool = False) -> None:
+    if verbose:
+        level = "DEBUG"
+    else:
+        level = "INFO"
 
     logging.basicConfig(
         level=level,
