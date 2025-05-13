@@ -8,7 +8,7 @@ def register_command(subparsers):
     parser = subparsers.add_parser(
         "scan", help="Scan workflow files for vulnerabilities"
     )
-    parser.set_defaults(func=handle_scan)
+    parser.set_defaults(command=handle_scan)
 
 
 def handle_scan(action_name: str):
