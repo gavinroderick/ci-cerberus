@@ -8,3 +8,4 @@ class Workflow:
     id: str
     name: str
     jobs: list[Job]
+    file_name: str

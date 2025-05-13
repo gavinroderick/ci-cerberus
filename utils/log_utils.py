@@ -4,12 +4,14 @@ import sys
 
 def setup_logger(verbose: bool = False) -> None:
     if verbose:
-        level = "DEBUG"
+        logging.basicConfig(
+            level="DEBUG",
+            format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+            handlers=[logging.StreamHandler(sys.stdout)],
+        )
     else:
-        level = "INFO"
-
-    logging.basicConfig(
-        level=level,
-        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-        handlers=[logging.StreamHandler(sys.stdout)],
-    )
+        logging.basicConfig(
+            level="INFO",
+            format="%(message)s",
+            handlers=[logging.StreamHandler(sys.stdout)],
+        )
