@@ -24,10 +24,12 @@ class BaseHttpClient:
             response.raise_for_status()
             return response.json()
         except requests.HTTPError as http_error:
-            logger.error(f"Error occurred making GET request to {url}: {http_error}")
+            logger.error(
+                f"HTTPError occurred making GET request to {url}: {http_error}"
+            )
         except requests.RequestException as request_exception:
             logger.error(
-                f"ERROR: Error occurred making GET request to {url}: {request_exception}"
+                f"RequestException occurred making GET request to {url}: {request_exception}"
             )
 
     def post(self, path: str, body: Optional[Any]) -> requests.Response:
