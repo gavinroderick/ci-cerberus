@@ -1,7 +1,7 @@
 # project & build info
 [project]
 name = "ci-cerberus"
-version = "0.1.4"
+version = "0.1.5"
 description = "Scans GitHub workflows for known vulnerable actions using the NIST National Vulnerability Database (NVD) API"
 authors = [{name= "Gavin Roderick", email = "gavin.roderick@pm.me"}]
 readme = "README.md"
