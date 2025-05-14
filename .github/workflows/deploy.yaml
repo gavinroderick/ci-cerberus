@@ -6,11 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - uses: actions/checkout@v4
-
-      # -----------------------------------------------------------------------------------------------------------
-      # Example 1
-      # -----------------------------------------------------------------------------------------------------------
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files
+      - name: Deploy Step (safe)
+        id: deploy-step
+        uses: gavinroderick/deploy-step
