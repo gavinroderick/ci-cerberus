@@ -45,12 +45,12 @@ class Cli:
 
     def _add_help(self):
         self.parser.add_argument(
-            "-g",
-            "--directory",
+            "-h",
+            "--help",
             type=str,
             metavar="",
             default=".",
-            help="Directory where GitHub workflows are located (relative to current directory)",
+            help="Displays this help text",
         )
 
     def _add_debug(self):
