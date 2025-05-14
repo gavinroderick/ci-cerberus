@@ -21,7 +21,6 @@ class Cli:
             formatter_class=argparse.RawDescriptionHelpFormatter,
         )
 
-        self._add_help()
         self._add_debug()
         self._add_version()
 
@@ -42,16 +41,6 @@ class Cli:
             parsed_args.command(parsed_args)
         else:
             self.parser.print_help()
-
-    def _add_help(self):
-        self.parser.add_argument(
-            "-h",
-            "--help",
-            type=str,
-            metavar="",
-            default=".",
-            help="Displays this help text",
-        )
 
     def _add_debug(self):
         self.parser.add_argument(
